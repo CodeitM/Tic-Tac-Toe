@@ -1,0 +1,78 @@
+.main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.players{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width:200px;
+    border: 2px solid black;
+}
+
+.board{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cell{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    font-size: large;
+    color:black
+}
+
+.cell:hover{
+    cursor: pointer;
+} 
+
+/* .board.X .cell:not(.X):not(.O):hover{
+    content: 'X';
+    color: blue;
+}
+
+.board.O .cell:not(.X):not(.O):hover{
+    content: 'O';
+    color: blue;
+} */
+
+.board.X .cell:hover::before{
+    content: 'X';
+    background-color: red;
+}
+
+.board.O .cell:hover::before{
+    content: 'O';
+    background-color: blue;
+}
+
+.cell.X.clicked::before{
+    content: 'X';
+}
+
+.turn{
+    background-color: aqua;
+}
+.cell.O.clicked::before{
+    content: 'O';
+}
